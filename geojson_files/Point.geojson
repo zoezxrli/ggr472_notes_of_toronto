@@ -1,0 +1,452 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "Event Venue": "Roy Thomson Hall",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38634548440412,
+                    43.646630818470754
+                ],
+                "type": "Point"
+            },
+            "id": 0
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Royal Alexandra Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38760602474734,
+                    43.64743625069116
+                ],
+                "type": "Point"
+            },
+            "id": 1
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Movie theater": "TIFF Lightbox",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.39054710347382,
+                    43.646714189853185
+                ],
+                "type": "Point"
+            },
+            "id": 2
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Comedy club": "Yuk Yuk's ",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38827126874511,
+                    43.649779721678385
+                ],
+                "type": "Point"
+            },
+            "id": 3
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Princess of Wales Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38924826297568,
+                    43.64706437993695
+                ],
+                "type": "Point"
+            },
+            "id": 4
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Live music venue": "Glenn Gould Studio",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.3877223311102,
+                    43.644401787854804
+                ],
+                "type": "Point"
+            },
+            "id": 5
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Factory Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.40281143607822,
+                    43.64550567521948
+                ],
+                "type": "Point"
+            },
+            "id": 6
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Meridian Hall",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.37601577191062,
+                    43.646654920236244
+                ],
+                "type": "Point"
+            },
+            "id": 7
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "St. Lawrence Centre for the Arts",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.37514073494498,
+                    43.64737252625778
+                ],
+                "type": "Point"
+            },
+            "id": 8
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Young People's Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.36885849786849,
+                    43.650065946474655
+                ],
+                "type": "Point"
+            },
+            "id": 9
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Opera house": "Joey & Toby Tanenbaum Opera Centre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.36443546696744,
+                    43.65092224310112
+                ],
+                "type": "Point"
+            },
+            "id": 10
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Four Seasons Centre for the Performing Arts",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38549840002993,
+                    43.65066928492314
+                ],
+                "type": "Point"
+            },
+            "id": 12
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Paradise Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.43068524417222,
+                    43.661185935242855
+                ],
+                "type": "Point"
+            },
+            "id": 14
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Movie theater": "The Royal",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.41451587545727,
+                    43.65523429202304
+                ],
+                "type": "Point"
+            },
+            "id": 15
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Event venue": "Tranzac Club",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.407529935896,
+                    43.66522384818438
+                ],
+                "type": "Point"
+            },
+            "id": 16
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Tarragon Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.41295976951753,
+                    43.67495058913045
+                ],
+                "type": "Point"
+            },
+            "id": 17
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "CAA Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38546188897492,
+                    43.66809858367537
+                ],
+                "type": "Point"
+            },
+            "id": 18
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Buddies in Bad Times Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.38299135896001,
+                    43.66320917912719
+                ],
+                "type": "Point"
+            },
+            "id": 19
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "CAA Ed Mirvish Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.37957701317207,
+                    43.655233848545095
+                ],
+                "type": "Point"
+            },
+            "id": 20
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Elgin & Winter Garden Theatres",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.37937017318659,
+                    43.65313935250202
+                ],
+                "type": "Point"
+            },
+            "id": 21
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Movie theater": "Imagine Cinemas Market Square",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.37247964852781,
+                    43.649527137762874
+                ],
+                "type": "Point"
+            },
+            "id": 21
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Canadian Stage",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.36396607456987,
+                    43.65058608754171
+                ],
+                "type": "Point"
+            },
+            "id": 23
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Concert hall": "Phoenix Concert Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.3739363038846,
+                    43.66460873460207
+                ],
+                "type": "Point"
+            },
+            "id": 24
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Concert hall": "Koerner Hall",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.39613174106321,
+                    43.66764920678639
+                ],
+                "type": "Point"
+            },
+            "id": 25
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Cultural center": "Hart House Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.39433986229176,
+                    43.66371496842544
+                ],
+                "type": "Point"
+            },
+            "id": 25
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Betty Oliphant Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.37799401895428,
+                    43.66422052828432
+                ],
+                "type": "Point"
+            },
+            "id": 27
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Performing arts theater": "Annex Theatre",
+                "marker-color": "#c1640d",
+                "marker-size": "medium"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.4109225164708,
+                    43.66334828607992
+                ],
+                "type": "Point"
+            },
+            "id": 29
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Center": "University of Toronto, St. George Campus",
+                "marker-color": "#0e5ea4"
+            },
+            "geometry": {
+                "coordinates": [
+                    -79.39513491704567,
+                    43.66175904994151
+                ],
+                "type": "Point"
+            },
+            "id": 30
+        }
+    ]
+}

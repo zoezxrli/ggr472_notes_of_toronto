@@ -4,67 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes from the Radiu3</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome for icons -->
-    <script src="script.js" defer></script> <!-- Link to external JS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    
+    <script src="script.js" defer></script> <!-- JavaScript -->
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#venues">Venues</a></li>
-                <li><a href="#data">Data</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="hero">
-        <h1>Notes from the Radiu3</h1>
-        <p>A Sonic Journey Through Toronto’s Cultural Heart</p>
-    </section>
-    
-    <section id="about">
-        <h2>About the Project</h2>
-        <p>Within a 3-kilometer radius of the University of Toronto, the city's stories unfold in whispers, echoes, and harmonies. This project maps the musical soul of Toronto’s theaters, dance stages, and cinemas.</p>
-    </section>
-    
-    <section id="venues">
-        <h2>Explore Venues</h2>
-        <div class="venue-grid">
-            <div class="venue-card">
-                <h3>Music Theaters</h3>
-                <p>Experience the echoes of legendary performances.</p>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-name" href="#about">Notes from the Radiu3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#venues">Venues</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chats">Chat</a></li>
+                </ul>
             </div>
-            <div class="venue-card">
-                <h3>Dance Stages</h3>
-                <p>Discover the rhythm and grace of Toronto’s dance venues.</p>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="mrs-saint-delafield-regular">Notes from the Radiu3</h1>
+        <h3>Zoe’s GGR472 Web Home</h3>
+        <p class="title">A Sonic Journey Through Toronto’s Cultural Heart</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container py-5">
+        <h2>About</h2>
+        <p class="description text-center">Within a 3-kilometer radius of the University of Toronto, the city’s stories unfold in whispers, echoes, and harmonies. “Notes from the Radius” 
+            captures the essence of Toronto’s artistic soul - its music theatres, dance stages, and cinemas - woven into a rich tapestry of auditory experience.<br> 
+            The map traces a journey from the University of Toronto St. George campus to the many notes that compose the city’s vibrant soundscape. From the resonate 
+            footsteps in historic theatres to the silent hum of anticipation before the curtain rises, so let’s begin to explore where performances happen, and 
+            immerse in this city’s soundscape. <br>
+            Tune in to the frequencies of the city, and let the notes guide your pulse. </p>
+    </section>
+
+    <!-- Venues Section -->
+    <section id="venues" class="container py-5 text-center">
+        <h2>Venues</h2>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="venue-card p-4 rounded">
+                    <a href="https://www.mirvish.com/" target="_blank" class="text-warning text-decoration-none">
+                        <h3>Music Theaters</h3>
+                    </a>
+                </div>
             </div>
-            <div class="venue-card">
-                <h3>Cinemas</h3>
-                <p>Explore the golden history of cinema in the city.</p>
+            <div class="col-md-4">
+                <div class="venue-card p-4 rounded">
+                    <a href="https://coc.ca/" target="_blank" class="text-warning text-decoration-none">
+                        <h3>Dance Stages</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="venue-card p-4 rounded">
+                    <a href="https://www.tiff.net/" target="_blank" class="text-warning text-decoration-none">
+                        <h3>Cinemas</h3>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
-    
-    <section id="data">
+
+    <!-- Spatial Data Section -->
+    <section id="data" class="container py-5 text-center">
         <h2>Spatial Data</h2>
-        <p>Access the spatial datasets used in this project:</p>
-        <ul>
-            <li><a href="data/music_venues.geojson" download>Download GeoJSON (Music Venues)</a></li>
-            <li><a href="data/theater_locations.geojson" download>Download GeoJSON (Theaters)</a></li>
-        </ul>
+        <p class="data-description">
+            <strong>Access the spatial datasets used in this project:</strong><br>
+            <strong>Point Data:</strong> Highlights all theatres within the radius.<br>
+            <strong>Line Data:</strong> Shows transportation routes from UofT St. George Campus to the ideal location.<br>
+            <strong>Polygon Data:</strong> Defines the land area of UofT St. George Campus and its coverage radius.<br>
+        </p>
+        <a href="geojson_files/Point.geojson" download class="btn btn-outline-warning">Download GeoJSON (Point Data)</a>
+        <a href="geojson_files/LineString.geojson" download class="btn btn-outline-warning">Download GeoJSON (Line Data)</a>
+        <a href="geojson_files/Polygon.geojson" download class="btn btn-outline-warning">Download GeoJSON (Polygon Data)</a>
+    </section>
+
+    <section id="chats" class="container mt-5">
+        <h2 class="text-center">Let's Chat!</h2>
+        <form id="chatForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="chat" class="form-label">Let's Chat!</label>
+                <textarea class="form-control" id="chat" rows="4" placeholder="Inspire us here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Send Chat</button>
+        </form>
     </section>
     
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="container py-5 text-center">
         <h2>Contact</h2>
-        <p>For inquiries, please email us at <a href="mailto:contact@radiu3.com">contact@radiu3.com</a></p>
+        <p>Should be avaliable sooooooooon</p>
     </section>
     
-    <footer>
-        <p>&copy; 2025 Notes from the Radiu3 | All rights reserved.</p>
-    </footer>
 </body>
 </html>
