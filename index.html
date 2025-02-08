@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css" rel="stylesheet"/>   
     <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
     
     <script src="script.js" defer></script> <!-- JavaScript -->
@@ -54,6 +56,8 @@
     <!-- Venues Section -->
     <section id="venues" class="container py-5 text-center">
         <h2>Venues</h2>
+        <div id="map" class="map-container"></div>
+        <script src="script.js"></script>
         <div class="row mt-4">
             <div class="col-md-4">
                 <div class="venue-card p-4 rounded">
