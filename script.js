@@ -25,45 +25,52 @@ const map = new mapboxgl.Map({
     container: 'map', // ID of the div where the map will be placed
     style: 'mapbox://styles/zoezhuoli/cm6segkif005101qs25x0avo9', // Custom basemap from Mapbox Studio
     center: [-79.3962, 43.6629], // Centered on University of Toronto
-    zoom: 12
+    zoom: 12,
+    pitch: 45
 });
 
-// Ensure the map container has a fixed height
-document.getElementById('map').style.height = '800px';
-document.getElementById('map').style.width = '100%';
-
-// Add zoom and rotation controls
-map.addControl(new mapboxgl.NavigationControl());
-
-// Define chapters and their coordinates
-const chapters = {
-    'roy-thomson': { center: [-79.38634548440412, 43.646630818470754], zoom: 15, pitch: 45 },
-    'royal-alexandra': { center: [-79.38760602474734, 43.64743625069116], zoom: 15, pitch: 45 },
-    'tiff-lightbox': { center: [-79.39054710347382, 43.646714189853185], zoom: 15, pitch: 45 },
-    'princess-of-wales': { center: [-79.38924826297568, 43.64706437993695], zoom: 15, pitch: 45 },
-    'glenn-gould': { center: [-79.3877223311102, 43.644401787854804], zoom: 15, pitch: 45 }
+const locations = {
+    'roy-thomson': {
+        center: [-79.38634548440412, 43.646630818470754],
+        zoom: 14,
+        pitch: 30
+    },
+    'royal-alexandra': {
+        center: [-79.38760602474734, 43.64743625069116],
+        zoom: 14,
+        pitch: 30
+    },
+    'tiff-lightbox': {
+        center: [-79.39054710347382, 43.646714189853185],
+        zoom: 14,
+        pitch: 30
+    }
 };
 
-let activeChapter = 'roy-thomson';
-function setActiveChapter(chapter) {
-    if (chapter === activeChapter) return;
-    map.flyTo(chapters[chapter]);
-    document.getElementById(chapter).classList.add('active');
-    document.getElementById(activeChapter).classList.remove('active');
-    activeChapter = chapter;
+let activeSection = 'roy-thomson';
+
+function setActiveSection(sectionId) {
+    if (sectionId === activeSection) return;
+
+    map.flyTo(locations[sectionId]);
+
+    document.getElementById(sectionId).classList.add('active');
+    document.getElementById(activeSection).classList.remove('active');
+
+    activeSection = sectionId;
 }
 
-function isElementOnScreen(id) {
+function isElementVisible(id) {
     const element = document.getElementById(id);
     const bounds = element.getBoundingClientRect();
     return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
 
-// On every scroll event, check which element is on screen
+// Event Listener: Update the map view when scrolling
 window.onscroll = () => {
-    for (const chapter in chapters) {
-        if (isElementOnScreen(chapter)) {
-            setActiveChapter(chapter);
+    for (const sectionId in locations) {
+        if (isElementVisible(sectionId)) {
+            setActiveSection(sectionId);
             break;
         }
     }
