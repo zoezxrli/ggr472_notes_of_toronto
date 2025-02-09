@@ -29,68 +29,43 @@ const map = new mapboxgl.Map({
 });
 
 // Ensure the map container has a fixed height
-document.getElementById('map').style.height = '500px';
+document.getElementById('map').style.height = '800px';
 document.getElementById('map').style.width = '100%';
 
 // Add zoom and rotation controls
 map.addControl(new mapboxgl.NavigationControl());
 
-// Load Data Layers
-map.on('load', function() {
-    // Load Point Data (Venues)
-    map.addSource('venues', {
-        type: 'geojson',
-        data: 'geojson_files/Point.geojson'
-    });
-    map.addLayer({
-        id: 'venues-layer',
-        type: 'circle',
-        source: 'venues',
-        paint: {
-            'circle-radius': 6,
-            'circle-color': '#ffcc00',
-            'circle-stroke-width': 1,
-            'circle-stroke-color': '#000'
+// Define chapters and their coordinates
+const chapters = {
+    'roy-thomson': { center: [-79.38634548440412, 43.646630818470754], zoom: 15, pitch: 45 },
+    'royal-alexandra': { center: [-79.38760602474734, 43.64743625069116], zoom: 15, pitch: 45 },
+    'tiff-lightbox': { center: [-79.39054710347382, 43.646714189853185], zoom: 15, pitch: 45 },
+    'princess-of-wales': { center: [-79.38924826297568, 43.64706437993695], zoom: 15, pitch: 45 },
+    'glenn-gould': { center: [-79.3877223311102, 43.644401787854804], zoom: 15, pitch: 45 }
+};
+
+let activeChapter = 'roy-thomson';
+function setActiveChapter(chapter) {
+    if (chapter === activeChapter) return;
+    map.flyTo(chapters[chapter]);
+    document.getElementById(chapter).classList.add('active');
+    document.getElementById(activeChapter).classList.remove('active');
+    activeChapter = chapter;
+}
+
+function isElementOnScreen(id) {
+    const element = document.getElementById(id);
+    const bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+// On every scroll event, check which element is on screen
+window.onscroll = () => {
+    for (const chapter in chapters) {
+        if (isElementOnScreen(chapter)) {
+            setActiveChapter(chapter);
+            break;
         }
-    });
-    
-    // Popup on Click
-    map.on('click', 'venues-layer', function(e) {
-        const coordinates = e.features[0].geometry.coordinates.slice();
-        const name = e.features[0].properties.name;
-        new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(`<h5>${name}</h5>`)
-            .addTo(map);
-    });
-    
-    // Load Line Data (Transit)
-    map.addSource('transit', {
-        type: 'geojson',
-        data: 'geojson_files/LineString.geojson'
-    });
-    map.addLayer({
-        id: 'transit-layer',
-        type: 'line',
-        source: 'transit',
-        paint: {
-            'line-width': 2,
-            'line-color': '#ff6600'
-        }
-    });
-    
-    // Load Polygon Data (Coverage)
-    map.addSource('coverage', {
-        type: 'geojson',
-        data: 'geojson_files/Polygon.geojson'
-    });
-    map.addLayer({
-        id: 'coverage-layer',
-        type: 'fill',
-        source: 'coverage',
-        paint: {
-            'fill-color': '#0077b6',
-            'fill-opacity': 0.2
-        }
-    });
-});
+    }
+};
+
