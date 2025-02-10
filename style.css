@@ -3,32 +3,26 @@ body {
     margin: 0;
     padding: 0;
     background-color: #121212;
-    color: #ffffff;
     text-align: center;
-    background-image: url('cover.jpg'); /* A background image */
+    background-image: url('cover.jpg'); /* Background image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     position: relative;
-    z-index: -3; /* Ensure background image is at the lowest level */
+    z-index: 0; /* Ensure background is at the lowest level */
 }
 
-/* Background filter: Sits above background but below content */
-.background-filter {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.72);
-    z-index: -2; /* Middle layer, above background */
+h2, h3 {
+    color: #ffcc00; /* Bright yellow for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+    text-align: center;
 }
 
-/* Ensure all content appears ABOVE the background filter */
-.content-wrapper {
+nav, section, .container-fluid, #features, #map {
     position: relative;
-    z-index: 2; /* Ensures content is above the filter */
+    z-index: 10;
+    width: 100%;
 }
 
 /* Navbar Styling */
@@ -49,6 +43,10 @@ body {
 
 /* welcome Section */
 #welcome {
+    background-color: rgba(0, 0, 0, 0.4); /* Darker background for contrast */
+    color: #fff; /* White text for contrast */
+    opacity: 1;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -57,6 +55,7 @@ body {
     text-align: center;
     position: relative;
     padding: 20px;
+    z-index: 2;
 }
 
 .mrs-saint-delafield-regular {
@@ -65,6 +64,14 @@ body {
     font-weight: 400;
     font-style: normal;
   }  
+
+#about, #venues, #data, #chats, #contact {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+    color: #fff; /* White text for contrast */
+    padding: 20px;
+    opacity: 1;
+    width: 100%;
+}
 
 /* About Section */
 .description {
@@ -92,6 +99,23 @@ body {
 .venue-card a:hover {
     text-decoration: underline;
     color: #ff9900;
+}
+
+.venue-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 9px;
+    background-color: #ffcc00;
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 10px;
+    
+}
+
+.venue-link:hover {
+    background-color: #ff9900;
 }
 
 /* Data Section */
@@ -135,6 +159,7 @@ body {
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 #chatForm .form-control {
     margin-bottom: 15px; 
     background: rgba(255, 255, 255, 0.9);
@@ -152,6 +177,7 @@ body {
     align-items: stretch;
     position: relative;
     width: 80%;
+    z-index: 2;
 }
 
 /* Map Stays Fixed */
@@ -161,32 +187,34 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 5; /* Ensure it is above background but below text */
 }
 
 /* Scrollable Story Section */
 #features {
-    flex: 1;
     margin-left: 60%;
     font-family: sans-serif;
-    overflow-y: auto;
+    overflow-y: scroll;
     background-color: rgba(255, 255, 255, 0.95);
     height: 80vh;
     padding: 20px;
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    color: #121212; /* Dark text */
 }
 
-/* Scroll Sections */
-section {
+/* Style each scrolling section */
+#features section {
     padding: 25px 50px;
     line-height: 25px;
     border-bottom: 1px solid #ddd;
-    opacity: 0.3;
+    opacity: 0.4;
     font-size: 14px;
     transition: opacity 0.5s ease-in-out;
     text-align: left;
 }
 
-section.active {
+#features section.active {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 30px 50px;
@@ -194,7 +222,7 @@ section.active {
     border-left: 5px solid #ffcc00;
 }
 
-section:last-child {
+#features section:last-child {
     border-bottom: none;
-    margin-bottom: 200px;
+    margin-bottom: 0px;
 }
