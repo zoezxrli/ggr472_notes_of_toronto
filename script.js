@@ -19,7 +19,8 @@ fetch('geojson_files/Point.geojson')
             // 1️. Add GeoJSON Source
             map.addSource('venues', {
                 type: 'geojson',
-                data: data  // Load venues from the GeoJSON file
+                data: data,  // Load venues from the GeoJSON file
+                cluster: false // Disable clustering
             });
 
             // 2️. Add Symbol Layer to Display Venue Names
@@ -32,8 +33,12 @@ fetch('geojson_files/Point.geojson')
                     'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
                     'text-size': 12,
                     'text-anchor': 'top', // Ensures text is above the point
-                    'text-offset': [0, 1.2] // Adjust label positioning
+                    'text-offset': [0, 1.2], // Adjust label positioning
+                    'visibility': 'visible', // Ensure visibility is enabled
+                    'text-allow-overlap': true, // Prevents hiding text when symbols overlap
                 },
+                minzoom: 0,  // Ensure text labels appear at all zoom levels
+                maxzoom: 22, // Keep labels visible at all zoom levels
                 paint: {
                     'text-color': '#ffffff' // White text for readability
                 }
