@@ -9,6 +9,12 @@ const map = new mapboxgl.Map({
     pitch: 45
 });
 
+fetch('geojson_files/Point.geojson')
+    .then(response => response.json())
+    .then(data => {
+        console.log("GeoJSON Sample Feature Properties:", data.features[0].properties);
+    })
+
 // Load GeoJSON file and add as a layer
 fetch('geojson_files/Point.geojson')
     .then(response => response.json())
@@ -16,56 +22,27 @@ fetch('geojson_files/Point.geojson')
         console.log("Loaded GeoJSON Data:", data); // Debugging check
 
         map.on('load', () => {
-            // 1️⃣ Add Image to Map (Ensure you replace 'icon.svg' with your actual path)
-            map.loadImage('theater.png', (error, image) => {
-                if (error) throw error;
-                map.addImage('venue-icon', image); // Add Image to Mapbox Style
+            // 1️. Add GeoJSON Source
+            map.addSource('venues', {
+                type: 'geojson',
+                data: data
+            });
 
-                // 2️⃣ Add GeoJSON Source
-                map.addSource('venues', {
-                    type: 'geojson',
-                    data: data
-                });
-
-                // 3️⃣ Add Symbol Layer with Custom Icon
-                map.addLayer({
-                    id: 'venue-icons',
-                    type: 'symbol',
-                    source: 'venues',
-                    layout: {
-                        'icon-image': 'venue-icon', // Use the custom icon
-                        'icon-size': 2, // Adjust size (change to fit your icon)
-                        'icon-anchor': 'bottom', // Positions icon correctly
-                        'text-field': ['get', 'name'], // Display name
-                        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
-                        'text-offset': [0, 1.2], // Adjust label positioning
-                        'text-size': 12,
-                        'text-anchor': 'top'
-                    },
-                    paint: {
-                        'text-color': '#ffffff' // Adjust text color
-                    }
-                });
-
-                // 4️⃣ Add Click Event for Popups
-                map.on('click', 'venue-icons', (e) => {
-                    const coordinates = e.features[0].geometry.coordinates.slice();
-                    const properties = e.features[0].properties;
-
-                    new mapboxgl.Popup()
-                        .setLngLat(coordinates)
-                        .setHTML(`<h4>${properties.name}</h4><p><a href="${properties.website}" target="_blank">Visit Website</a></p>`)
-                        .addTo(map);
-                });
-
-                // 5️⃣ Change Cursor on Hover
-                map.on('mouseenter', 'venue-icons', () => {
-                    map.getCanvas().style.cursor = 'pointer';
-                });
-
-                map.on('mouseleave', 'venue-icons', () => {
-                    map.getCanvas().style.cursor = '';
-                });
+            // 2️. Add Symbol Layer to Display Venue Names
+            map.addLayer({
+                id: 'venue-labels',
+                type: 'symbol',
+                source: 'venues',
+                layout: {
+                    'text-field': ['get', 'Name'], // Display name from GeoJSON properties
+                    'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                    'text-size': 12,
+                    'text-anchor': 'top', // Ensures text is above the point
+                    'text-offset': [0, 1.2] // Adjust label positioning
+                },
+                paint: {
+                    'text-color': '#ffffff' // White text for readability
+                }
             });
         });
     })

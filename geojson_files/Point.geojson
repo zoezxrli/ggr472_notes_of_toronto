@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Event Venue": "Roy Thomson Hall",
+                "Name": "Roy Thomson Hall",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -20,7 +20,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Royal Alexandra Theatre",
+                "Name": "Royal Alexandra Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -36,7 +36,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Movie theater": "TIFF Lightbox",
+                "Name": "TIFF Lightbox",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -52,7 +52,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Comedy club": "Yuk Yuk's ",
+                "Name": "Yuk Yuk's ",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -68,7 +68,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Princess of Wales Theatre",
+                "Name": "Princess of Wales Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -84,7 +84,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Live music venue": "Glenn Gould Studio",
+                "Name": "Glenn Gould Studio",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -100,7 +100,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Factory Theatre",
+                "Name": "Factory Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -116,7 +116,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Meridian Hall",
+                "Name": "Meridian Hall",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -132,7 +132,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "St. Lawrence Centre for the Arts",
+                "Name": "St. Lawrence Centre for the Arts",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -148,7 +148,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Young People's Theatre",
+                "Name": "Young People's Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -164,7 +164,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Opera house": "Joey & Toby Tanenbaum Opera Centre",
+                "Name": "Joey & Toby Tanenbaum Opera Centre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -180,7 +180,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Four Seasons Centre for the Performing Arts",
+                "Name": "Four Seasons Centre for the Performing Arts",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -196,7 +196,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Paradise Theatre",
+                "Name": "Paradise Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -212,7 +212,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Movie theater": "The Royal",
+                "Name": "The Royal",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -228,7 +228,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Event venue": "Tranzac Club",
+                "Name": "Tranzac Club",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -244,7 +244,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Tarragon Theatre",
+                "Name": "Tarragon Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -260,7 +260,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "CAA Theatre",
+                "Name": "CAA Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -276,7 +276,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Buddies in Bad Times Theatre",
+                "Name": "Buddies in Bad Times Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -292,7 +292,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "CAA Ed Mirvish Theatre",
+                "Name": "CAA Ed Mirvish Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -308,7 +308,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Elgin & Winter Garden Theatres",
+                "Name": "Elgin & Winter Garden Theatres",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -324,7 +324,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Movie theater": "Imagine Cinemas Market Square",
+                "Name": "Imagine Cinemas Market Square",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -340,7 +340,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Canadian Stage",
+                "Name": "Canadian Stage",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -356,7 +356,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Concert hall": "Phoenix Concert Theatre",
+                "Name": "Phoenix Concert Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -372,7 +372,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Concert hall": "Koerner Hall",
+                "Name": "Koerner Hall",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -388,7 +388,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Cultural center": "Hart House Theatre",
+                "Name": "Hart House Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -404,7 +404,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Betty Oliphant Theatre",
+                "Name": "Betty Oliphant Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
@@ -420,7 +420,7 @@
         {
             "type": "Feature",
             "properties": {
-                "Performing arts theater": "Annex Theatre",
+                "Name": "Annex Theatre",
                 "marker-color": "#c1640d",
                 "marker-size": "medium"
             },
