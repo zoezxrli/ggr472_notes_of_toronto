@@ -5,34 +5,28 @@ const map = new mapboxgl.Map({
     container: 'map', // ID of the div where the map will be placed
     style: 'mapbox://styles/zoezhuoli/cm6segkif005101qs25x0avo9', // Custom basemap from Mapbox Studio
     center: [-79.3962, 43.6629], // Centered on University of Toronto
-    zoom: 12,
-    pitch: 45
+    zoom: 12,   // Initial zoom level
+    pitch: 45   // Tilt the map for a 3D effect
 });
-
-fetch('geojson_files/Point.geojson')
-    .then(response => response.json())
-    .then(data => {
-        console.log("GeoJSON Sample Feature Properties:", data.features[0].properties);
-    })
 
 // Load GeoJSON file and add as a layer
 fetch('geojson_files/Point.geojson')
     .then(response => response.json())
     .then(data => {
-        console.log("Loaded GeoJSON Data:", data); // Debugging check
+        console.log("Loaded GeoJSON Data:", data); // Log loaded GeoJSON data
 
-        map.on('load', () => {
+        map.on('load', () => {      // Ensure map is fully loaded before adding layers
             // 1️. Add GeoJSON Source
             map.addSource('venues', {
                 type: 'geojson',
-                data: data
+                data: data  // Load venues from the GeoJSON file
             });
 
             // 2️. Add Symbol Layer to Display Venue Names
             map.addLayer({
-                id: 'venue-labels',
-                type: 'symbol',
-                source: 'venues',
+                id: 'venue-labels',     // Unique ID for the layer
+                type: 'symbol',     // Defines it as a text-based symbol layer
+                source: 'venues',       // Connect it to the 'venues' source
                 layout: {
                     'text-field': ['get', 'Name'], // Display name from GeoJSON properties
                     'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
@@ -48,7 +42,7 @@ fetch('geojson_files/Point.geojson')
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
 
-
+// All locations for venues with their coordinates and zoom settings
 const locations = {
     "roy-thomson": { center: [-79.386345, 43.646630], zoom: 14, pitch: 30 },
     "royal-alexandra": { center: [-79.387606, 43.647436], zoom: 14, pitch: 30 },
@@ -79,12 +73,12 @@ const locations = {
     "annex-theatre": { center: [-79.410922, 43.663348], zoom: 14, pitch: 20 }
 };
 
-// Track which section is currently active
+// Track which section is currently active in the scrolling interface
 let activeSection = 'roy-thomson';
 
 // FUnction to update the active section and fly to the new location
 function setActiveSection(sectionId) {
-    if (sectionId === activeSection) return;
+    if (sectionId === activeSection) return;    // Prevent unnecessary reloading
 
     console.log(`Switching to: ${sectionId}`); // Debugging log
 
@@ -112,8 +106,12 @@ function setActiveSection(sectionId) {
         console.log(`Error: ${sectionId} not found in locations`);
     }
 
+    // Highlight the active section in the UI
     document.getElementById(sectionId).classList.add('active');
-    document.getElementById(activeSection)?.classList.remove('active'); // Remove class safely
+    // Remove previous highlight safely
+    document.getElementById(activeSection)?.classList.remove('active'); 
+
+    // Detect scrolling inside the venue description panel and update the active section
     document.getElementById("features").addEventListener("scroll", () => {
         console.log("Scrolling inside Venue section detected!");
     
@@ -121,26 +119,28 @@ function setActiveSection(sectionId) {
             if (isElementVisible(sectionId)) {
                 console.log(`Visible section: ${sectionId}`);
                 setActiveSection(sectionId);
-                break;
+                break;  // Stop checking after the first visible section is found
             }
         }
     });
 
-    activeSection = sectionId;
+    activeSection = sectionId;  // Update active section variable
 }
 
 // Function to check if a section is visible in the viewport
 function isElementVisible(id) {
     const element = document.getElementById(id);
     const container = document.getElementById("features");  //scorll the feature Venue only 
-    if (!element) return false; // Prevent errors
+    if (!element) return false; // Prevent errors if element is missing
 
     const bounds = element.getBoundingClientRect();
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
+    // Return true if the section is within the viewport range
     return (bounds.top < viewportHeight * 0.6) && (bounds.bottom > viewportHeight * 0.2);
 }
 
+// Detect scrolling events to update active section
 window.addEventListener("scroll", () => {
     console.log("Scrolling detected!");
 
@@ -153,4 +153,5 @@ window.addEventListener("scroll", () => {
     }
 });
 
+// Trigger an initial scroll event to set the correct active section on page load
 window.dispatchEvent(new Event('scroll'));
