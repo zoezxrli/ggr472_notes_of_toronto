@@ -1,23 +1,3 @@
-// document.in JavaScript is calling an existing element from the HTML.
-
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Notes from the Radiu3 loaded!");
-
-    // Venue cards: when move the mouse over, the card will slightly
-    const venueCards = document.querySelectorAll(".venue-card");
-    venueCards.forEach(card => {
-        card.addEventListener("mouseover", function () {
-            this.style.transform = "scale(1.05)";
-            this.style.transition = "transform 0.3s ease-in-out";
-        });
-        card.addEventListener("mouseout", function () {
-            this.classList.remove("shadow-lg");
-            this.style.transform = "scale(1)";
-        });
-    });
-
-});
-
 // Initialize Mapbox
 mapboxgl.accessToken = 'pk.eyJ1Ijoiem9lemh1b2xpIiwiYSI6ImNtNnNjeTBoajA2Z2wyd3BwdzhsM200YjgifQ.kjh3gJE9ldgvkDfFnHKSGQ';
 
@@ -28,6 +8,69 @@ const map = new mapboxgl.Map({
     zoom: 12,
     pitch: 45
 });
+
+// Load GeoJSON file and add as a layer
+fetch('geojson_files/Point.geojson')
+    .then(response => response.json())
+    .then(data => {
+        console.log("Loaded GeoJSON Data:", data); // Debugging check
+
+        map.on('load', () => {
+            // 1️⃣ Add Image to Map (Ensure you replace 'icon.svg' with your actual path)
+            map.loadImage('theater.png', (error, image) => {
+                if (error) throw error;
+                map.addImage('venue-icon', image); // Add Image to Mapbox Style
+
+                // 2️⃣ Add GeoJSON Source
+                map.addSource('venues', {
+                    type: 'geojson',
+                    data: data
+                });
+
+                // 3️⃣ Add Symbol Layer with Custom Icon
+                map.addLayer({
+                    id: 'venue-icons',
+                    type: 'symbol',
+                    source: 'venues',
+                    layout: {
+                        'icon-image': 'venue-icon', // Use the custom icon
+                        'icon-size': 2, // Adjust size (change to fit your icon)
+                        'icon-anchor': 'bottom', // Positions icon correctly
+                        'text-field': ['get', 'name'], // Display name
+                        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 1.2], // Adjust label positioning
+                        'text-size': 12,
+                        'text-anchor': 'top'
+                    },
+                    paint: {
+                        'text-color': '#ffffff' // Adjust text color
+                    }
+                });
+
+                // 4️⃣ Add Click Event for Popups
+                map.on('click', 'venue-icons', (e) => {
+                    const coordinates = e.features[0].geometry.coordinates.slice();
+                    const properties = e.features[0].properties;
+
+                    new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(`<h4>${properties.name}</h4><p><a href="${properties.website}" target="_blank">Visit Website</a></p>`)
+                        .addTo(map);
+                });
+
+                // 5️⃣ Change Cursor on Hover
+                map.on('mouseenter', 'venue-icons', () => {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+
+                map.on('mouseleave', 'venue-icons', () => {
+                    map.getCanvas().style.cursor = '';
+                });
+            });
+        });
+    })
+    .catch(error => console.error('Error loading GeoJSON:', error));
+
 
 const locations = {
     "roy-thomson": { center: [-79.386345, 43.646630], zoom: 14, pitch: 30 },
@@ -134,6 +177,3 @@ window.addEventListener("scroll", () => {
 });
 
 window.dispatchEvent(new Event('scroll'));
-
-
-
